@@ -9,8 +9,7 @@
     $userAge = $_GET["age"];
 
     // Validation Acess flag
-    $validationAccess = true;
-    
+    $validationAccess = true;   
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +23,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-
-
     <!-- MAIN -->
     <main>
         <!-- TITLE -->
@@ -34,27 +30,38 @@
 
        <div>
             <?php
-
-                if ( strlen($user) > 3) {
+                // 
+                // If any of the next three(3) conditions is false
+                // it will trigger the $validationAccess to become false as well.
+                // 
+                if ( strlen($userName) < 3) {
                     $validationAccess = false;
                     // Error message
-                    echo "Il nome deve avere almeno 3 caratteri - ";
+                    echo "Il nome deve avere almeno 3 caratteri!";
                 } else if ( strpos($userMail, "@") === false || strpos($userMail, ".") === false ){
                     $validationAccess = false;
                     // Error message
-                    echo "La mail non è valida - ";
+                    echo "La mail non è valida!";
                 } else if ( !is_numeric($userAge) ) {
                     $validationAccess = false;
                     // Error message
-                    echo "L'età non è valida";
+                    echo "L'età non è valida!";
                 }
+            ?>
+        </div> 
 
+        <br>
+
+        <div>   
+            <?php
+                // 
+                // Display output through echo of $validationAccess result.
+                // 
                 if ( $validationAccess ) {
                     echo "Accesso riuscito!";
                 } else {
                     echo "Accesso negato!";
                 }
-
             ?>
        </div>
     </main>
