@@ -54,8 +54,8 @@
                 <li>
                     <?php echo $thisPartite["casa"]; ?> - 
                     <?php echo $thisPartite["ospite"]; ?> | 
-                    <?php echo strval($thisPartite["punteggioCasa"]); ?> : 
-                    <?php echo strval($thisPartite["punteggioOspite"]); ?>
+                    <?php echo $thisPartite["punteggioCasa"]; ?> : 
+                    <?php echo $thisPartite["punteggioOspite"]; ?>
                 </li>
 
             <?php } ?>
